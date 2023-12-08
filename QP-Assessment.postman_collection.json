@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "923cd3e5-b747-46e5-9f2f-d370de212513",
+		"name": "QP-Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18650710"
+	},
+	"item": [
+		{
+			"name": "Add Grocery Item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itemName\": \"Item-3\",\r\n    \"itemPrice\": 59.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://{{HOST_NAME}}:{{PORT}}/{{API_VERSIONED_PATH}}/addItem"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Grocery Items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://{{HOST_NAME}}:{{PORT}}/{{API_VERSIONED_PATH}}/viewAllItems"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Grocery Item By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://{{HOST_NAME}}:{{PORT}}/{{API_VERSIONED_PATH}}/viewItem/25"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Grocery Item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://{{HOST_NAME}}:{{PORT}}/{{API_VERSIONED_PATH}}/removeItem/103"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Grocery Item",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itemQuantity\": 69\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://{{HOST_NAME}}:{{PORT}}/{{API_VERSIONED_PATH}}/updateItem/152"
+			},
+			"response": []
+		},
+		{
+			"name": "Manage Inventory",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"itemId\": 150,\r\n        \"itemQuantity\": 420\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://{{HOST_NAME}}:{{PORT}}/{{API_VERSIONED_PATH}}/manageInventory"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Order",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "signUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user-1\",\r\n    \"password\": \"user-1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://{{HOST_NAME}}:{{PORT}}/api/v1/auth/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "signIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://{{HOST_NAME}}:{{PORT}}/api/v1/auth/signin"
+			},
+			"response": []
+		},
+		{
+			"name": "refresh token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwMTk3MDUwMywiZXhwIjoxNzAyNTc1MzAzfQ.Nilklkgz44WRrIqMdmFbdabCC5XJay-7gHaD_WsynKrO0GAtZUthb4wQCTAo1i0T\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://{{HOST_NAME}}:{{PORT}}/api/v1/auth/refresh"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST_NAME",
+			"value": "localhost"
+		},
+		{
+			"key": "PORT",
+			"value": "8081",
+			"type": "string"
+		},
+		{
+			"key": "API_VERSIONED_PATH",
+			"value": "api/v1/grocery",
+			"type": "string"
+		},
+		{
+			"key": "API_VERSIONED_ORDER_PATH",
+			"value": "api/v1/orders",
+			"type": "string"
+		},
+		{
+			"key": "access_token",
+			"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyLTEiLCJpYXQiOjE3MDE5Njg2MjEsImV4cCI6MjQ1MDgzNDgxNDI4NDY0MH0.iH-nuun4VNj4vrqO_lSBcNRXYcjRz6_aD29033VDg4Y7HgkpBWcB3X9E8fzYDnvH",
+			"type": "string"
+		}
+	]
+}
